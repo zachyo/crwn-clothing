@@ -32,6 +32,7 @@ class Directory extends React.Component {
           size: "large",
           id: 4,
           linkUrl: "shop/womens",
+          food: "beans",
         },
         {
           title: "mens",
@@ -39,6 +40,7 @@ class Directory extends React.Component {
           size: "large",
           id: 5,
           linkUrl: "shop/mens",
+          food: "rice",
         },
       ],
     };
