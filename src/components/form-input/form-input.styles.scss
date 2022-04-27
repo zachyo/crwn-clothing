@@ -35,11 +35,12 @@ $main-color: black;
 
   input[type='password'] {
     letter-spacing: 0.2em;
+    
   }
 
   .form-input-label {
     color: $sub-color;
-    font-size: 16px;
+    font-size: 14 px;
     font-weight: normal;
     position: absolute;
     pointer-events: none;
