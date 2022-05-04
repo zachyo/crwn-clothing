@@ -49,7 +49,7 @@ class App extends React.Component {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/shop" element={<Shop />} />
-          {/* <Route>{<div>{this.props.currentUser}</div>}</Route> */}
+          <Route path="/signin" element={<SignInandSignUpPage />}/>
           <Route
             exact
             path="/signin"
