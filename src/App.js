@@ -4,12 +4,13 @@ import { connect } from "react-redux";
 import "./App.css";
 import HomePage from "./pages/homepage/homepage.component";
 import Shop from "./pages/shop/shop-page.component";
+import Checkout from "./pages/checkout/checkout.component";
+import SignInandSignUpPage from "./pages/signin&signup/signinandsignup.component";
 import Header from "./components/header/header.component";
 import {
   auth,
   createUserProfileDoc,
 } from "./components/firebase/firebase.utils";
-import SignInandSignUpPage from "./pages/signin&signup/signinandsignup.component";
 import { setCurrentUser } from "./redux/user/user.actions";
 
 class App extends React.Component {
@@ -50,6 +51,7 @@ class App extends React.Component {
           <Route exact path="/" element={<HomePage />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/signin" element={<SignInandSignUpPage />}/>
+          <Route path="/checkout" element={<Checkout/>} />
           <Route
             exact
             path="/signin"

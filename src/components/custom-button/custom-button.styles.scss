@@ -9,13 +9,13 @@
   background-color: black;
   color: white;
   text-transform: uppercase;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: bolder;
   border: none;
   cursor: pointer;
-  text-align: center;
-  display: inline-block;
-
+  display: flex;
+  justify-content: center;
+  
   &:hover {
     background-color: white;
     color: black;
@@ -25,9 +25,20 @@
   &.google-signin {
     color: white;
     background-color: #4285f4;
-  &:hover {
-    background-color: #1f53a7;
-    border: none;
-    
-  } }
+    &:hover {
+      background-color: #1f53a7;
+      border: none;
+    }
+  }
+
+  &.inverted {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    &:hover {
+      background-color: black;
+      color: white;
+      border: none;
+    }
+  }
 }
