@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import {ReactComponent as Logo} from '../../assets/crown.svg.svg';
 import {auth} from '../firebase/firebase.utils'
 import { connect } from "react-redux";
@@ -8,6 +8,9 @@ import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
 
 const Header = ({currentUser,hidden}) => {
+
+// const history = useHistory(); 
+
     return (
       <div className="header">
         <Link to="/" className="logo-container">

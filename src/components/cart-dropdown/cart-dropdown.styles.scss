@@ -31,4 +31,12 @@
       padding: 0;
     }
   }
+  .checkout {
+    background-color: black;
+  color: white;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+  }
 }

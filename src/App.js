@@ -12,6 +12,7 @@ import {
   createUserProfileDoc,
 } from "./components/firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
+import CollectionPage from "./pages/collection/collection.component";
 
 class App extends React.Component {
   // constructor() {
@@ -36,6 +37,7 @@ class App extends React.Component {
         });
       }
       setCurrentUser(user);
+      // history.push('/');
       console.log(user);
     });
   }
@@ -49,15 +51,19 @@ class App extends React.Component {
         <Header />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/signin" element={<SignInandSignUpPage />}/>
-          <Route path="/checkout" element={<Checkout/>} />
+          <Route path="/shop" element={<Shop />}>
+            <Route path="shop/:collectionId" element={<CollectionPage />} />
+          </Route>
+          <Route path="/signin" element={<SignInandSignUpPage />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/hats" element={<CollectionPage />} />
+
           <Route
             exact
             path="/signin"
-            render={() => 
+            render={() =>
               this.props.currentUser ? (
-                <Navigate to="/" />
+                <Navigate to="/" element={<HomePage/>}/>
               ) : (
                 <SignInandSignUpPage />
               )

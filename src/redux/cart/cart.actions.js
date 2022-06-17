@@ -17,3 +17,10 @@ export const delItem = (item) => {
     payload: item,
   };
 };
+
+export const delOne = item => {
+  return {
+    type : cartActionTypes.DEL_ONE,
+    payload: item
+  }
+}
