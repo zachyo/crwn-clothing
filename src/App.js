@@ -17,7 +17,6 @@ import CollectionPage from "./pages/collection/collection.component";
 class App extends React.Component {
   // constructor() {
   //   super();
-  //   const change = useNavigate();
 
   // };
 
