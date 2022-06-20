@@ -56,8 +56,8 @@ class App extends React.Component {
           <Route path="/signin" element={<SignInandSignUpPage />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/hats" element={<CollectionPage />} />
-
-          <Route
+          <Route path="/signin" element={<Navigate replace to={<HomePage/>}/>} />
+          {/* <Route
             exact
             path="/signin"
             render={() =>
@@ -67,7 +67,7 @@ class App extends React.Component {
                 <SignInandSignUpPage />
               )
             }
-          />
+          /> */}
         </Routes>
       </div>
     );
