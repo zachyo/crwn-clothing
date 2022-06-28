@@ -7,8 +7,8 @@ import { connect } from "react-redux";
 const Directory = ({ sections }) => {
   return (
     <div className="menu-directory">
-      {sections.map(({ ...menuProps }) => {
-        return <MenuItem {...menuProps} />;
+      {sections.map(({ id, ...menuProps }) => {
+        return <MenuItem {...menuProps} key={id} />;
       })}
     </div>
   );

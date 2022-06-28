@@ -8,11 +8,13 @@ import Checkout from "./pages/checkout/checkout.component";
 import SignInandSignUpPage from "./pages/signin&signup/signinandsignup.component";
 import Header from "./components/header/header.component";
 import {
+  addCollectionAndDocuments,
   auth,
   createUserProfileDoc,
 } from "./components/firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
 import CollectionPage from "./pages/collection/collection.component";
+import { selectCollectionsForPreview } from "./redux/shop/shop.utils";
 
 class App extends React.Component {
   // constructor() {
@@ -23,7 +25,7 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
+    const { setCurrentUser, collectionsArray } = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
       if (user) {
         const userRef = await createUserProfileDoc(user);
@@ -36,6 +38,7 @@ class App extends React.Component {
         });
       }
       setCurrentUser(user);
+      addCollectionAndDocuments('collections', collectionsArray.map(({title, items}) => ({title, items})))
       // history.push('/');
       console.log(user);
     });
@@ -74,8 +77,9 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+  collectionsArray : selectCollectionsForPreview(state.shop.collections)
 });
 
 const mapDispatchToProps = (dispatch) => ({
