@@ -3,6 +3,7 @@ import CollectionsOverview from '../../components/collections-overview/collectio
 import { Route, Routes } from "react-router-dom";
 import CollectionPage from "../collection/collection.component";
 
+//change to a class component
 
 const Shop = ({match}) => {
   console.log(match)
