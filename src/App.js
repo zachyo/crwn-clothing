@@ -34,13 +34,13 @@ class App extends React.Component {
             id: snapShot.id,
             ...snapShot.data(),
           });
-          console.log(this.state);
+          // console.log(this.state);
         });
       }
       setCurrentUser(user);
       addCollectionAndDocuments('collections', collectionsArray.map(({title, items}) => ({title, items})))
       // history.push('/');
-      console.log(user);
+      // console.log(user);
     });
   }
 
