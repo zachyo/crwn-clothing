@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { connect } from "react-redux";
 import "./App.css";
 import HomePage from "./pages/homepage/homepage.component";
@@ -57,7 +57,6 @@ class App extends React.Component {
           <Route path="/signin" element={<SignInandSignUpPage />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/hats" element={<CollectionPage />} />
-          <Route path="/signin" element={<Navigate replace to={<HomePage/>}/>} />
           {/* <Route
             exact
             path="/signin"
