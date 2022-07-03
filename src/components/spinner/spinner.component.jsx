@@ -1,5 +1,5 @@
 import './spinner.styles.scss'
-import { selectShopItems } from '../../redux/shop/shop.utils'
+// import { selectShopItems } from '../../redux/shop/shop.utils'
 
 const Spinner = () => {
     console.log('yes')
