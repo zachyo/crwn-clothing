@@ -13,15 +13,18 @@ class SignUp extends React.Component {
       password: "",
       retypePassword: "",
       email: "",
-      // id: '',
     };
   }
+
+
+
 
   HandleSubmit = async (event) => {
     event.preventDefault();
 
     const { displayName, password, email, retypePassword } = this.state;
     if (password !== retypePassword) {
+      console.log(this.state)
         alert("Passwords don't match")
         return;
     }
@@ -35,6 +38,7 @@ class SignUp extends React.Component {
           retypePassword: "",
           email: "",
         });
+        console.log(user)
 
     } catch(error) {
         console.log(error)
@@ -44,6 +48,7 @@ class SignUp extends React.Component {
   HandleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
+    console.log(this.state)
   };
 
   render() {
@@ -85,7 +90,10 @@ class SignUp extends React.Component {
             onChange={this.HandleChange}
             required
           />
-          <CustomButton type="submit">SIGN UP</CustomButton>
+          <CustomButton type="submit" onclick={this.HandleSubmit}>
+            SIGN UP
+            {/* <button type="submit">Create Account</button> */}
+          </CustomButton>
         </form>
       </div>
     );
