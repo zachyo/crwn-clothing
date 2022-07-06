@@ -6,7 +6,7 @@ import {
   firestore,
   convertCollectionsSnapshotToMap,
 } from "../../components/firebase/firebase.utils";
-import { updateCollections } from "../../redux/shop/shop.actions";
+import { fetchCollectionsSuccess } from "../../redux/shop/shop.actions";
 import { connect } from "react-redux";
 import Spinner from "../../components/spinner/spinner.component";
 
@@ -54,7 +54,7 @@ class Shop extends React.Component {
 
 const mapDispatchToProps = (dispatch) => ({
   updateCollections: (collectionsMap) =>
-    dispatch(updateCollections(collectionsMap)),
+    dispatch(fetchCollectionsSuccess(collectionsMap)),
 });
 
 export default connect(null, mapDispatchToProps)(Shop);
