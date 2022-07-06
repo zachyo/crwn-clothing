@@ -31,13 +31,13 @@ class Shop extends React.Component {
     );
   }
   render() {
-    const { match } = this.props;
+    const { match, isCollectionsFetching } = this.props;
     const { loading } = this.state;
     console.log(match);
 
     return (
       <div className="shop-page">
-        {loading ? <Spinner /> : <CollectionsOverview />}
+        {isCollectionsFetching ? <Spinner /> : <CollectionsOverview />}
         <Routes>
           {loading ? (
             <Route exact path="/spinner" element={<Spinner />} />
@@ -52,9 +52,13 @@ class Shop extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  isCollectionsFetching : state.shop.isFetching
+})
+
 const mapDispatchToProps = (dispatch) => ({
   updateCollections: (collectionsMap) =>
     dispatch(fetchCollectionsSuccess(collectionsMap)),
 });
 
-export default connect(null, mapDispatchToProps)(Shop);
+export default connect(mapStateToProps, mapDispatchToProps)(Shop);
