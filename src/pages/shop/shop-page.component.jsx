@@ -13,9 +13,7 @@ import Spinner from "../../components/spinner/spinner.component";
 //change to a class component
 
 class Shop extends React.Component {
-  state = {
-    loading: true,
-  };
+  
 
   unsubscribeFromSnapshot = null;
 
@@ -32,14 +30,13 @@ class Shop extends React.Component {
   }
   render() {
     const { match, isCollectionsFetching } = this.props;
-    const { loading } = this.state;
     console.log(match);
 
     return (
       <div className="shop-page">
         {isCollectionsFetching ? <Spinner /> : <CollectionsOverview />}
         <Routes>
-          {loading ? (
+          {isCollectionsFetching ? (
             <Route exact path="/spinner" element={<Spinner />} />
           ) : (
             <Route exact path="/shop" element={<CollectionsOverview />} />
