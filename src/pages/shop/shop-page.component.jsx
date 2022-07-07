@@ -21,7 +21,7 @@ class Shop extends React.Component {
   componentDidMount() {
     const { updateCollections } = this.props;
 
-    // fetchCollectionsStart()
+    //fetchCollectionsStart()
     const collectionRef = firestore.collection("collections");
     this.unsubscribeFromSnapshot = collectionRef.onSnapshot(
       async (snapShot) => {
