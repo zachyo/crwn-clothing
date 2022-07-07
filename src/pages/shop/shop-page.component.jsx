@@ -9,6 +9,7 @@ import {
 import { fetchCollectionsSuccess } from "../../redux/shop/shop.actions";
 import { connect } from "react-redux";
 import Spinner from "../../components/spinner/spinner.component";
+// import { fetchCollectionsStart } from "../../redux/shop/shop.sagas";
 
 //change to a class component
 
@@ -19,6 +20,8 @@ class Shop extends React.Component {
 
   componentDidMount() {
     const { updateCollections } = this.props;
+
+    // fetchCollectionsStart()
     const collectionRef = firestore.collection("collections");
     this.unsubscribeFromSnapshot = collectionRef.onSnapshot(
       async (snapShot) => {
