@@ -13,6 +13,7 @@ import {
 } from "./components/firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
 import CollectionPage from "./pages/collection/collection.component";
+import NotFound from "./components/notFound/notFound";
 
 class App extends React.Component {
   // constructor() {
@@ -57,6 +58,7 @@ class App extends React.Component {
           <Route path="/signin" element={<SignInandSignUpPage />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/hats" element={<CollectionPage />} />
+          <Route path='*' element={<NotFound/>} />
           {/* <Route
             exact
             path="/signin"
