@@ -1,28 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CustomButton from '../custom-button/custom-button.component';
 import { auth, createUserProfileDoc } from '../firebase/firebase.utils';
 import FormInput from '../form-input/form-input.component';
 import "../signup/signup.styles.scss";
 
-class SignUp extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
+const SignUp = () => {
+  const [userCredentials, setCredentials] = useState({
       displayName: "",
       password: "",
       retypePassword: "",
       email: "",
-    };
-  }
+    })
+    const { displayName, password, email, retypePassword } = userCredentials;
 
 
 
-
-  HandleSubmit = async (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const { displayName, password, email, retypePassword } = this.state;
     if (password !== retypePassword) {
       console.log(this.state)
         alert("Passwords don't match")
@@ -32,38 +27,35 @@ class SignUp extends React.Component {
     try { 
         const {user} = await auth.createUserWithEmailAndPassword(email, password)
         await createUserProfileDoc(user, {displayName});
-        this.setState({
+        setCredentials({
           displayName: "",
           password: "",
           retypePassword: "",
           email: "",
         });
         console.log(user)
-
     } catch(error) {
         console.log(error)
     }
   };
 
-  HandleChange = (event) => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
-    console.log(this.state)
+    setCredentials({ ...userCredentials , [name]: value });
+    console.log(userCredentials)
   };
 
-  render() {
-    const { displayName, password, email, retypePassword } = this.state;
     return (
       <div className="sign-up">
         <h2 className="title">I don't have an account</h2>
         <span>Sign in with your email and password</span>
-        <form onSubmit={this.HandleSubmit}>
+        <form onSubmit={handleSubmit}>
           <FormInput
             type="text"
             name="displayName"
             label="Display Name"
             value={displayName}
-            onChange={this.HandleChange}
+            onChange={handleChange}
             required
           />
           <FormInput
@@ -71,7 +63,7 @@ class SignUp extends React.Component {
             name="email"
             label="Email"
             value={email}
-            onChange={this.HandleChange}
+            onChange={handleChange}
             required
           />
           <FormInput
@@ -79,7 +71,7 @@ class SignUp extends React.Component {
             name="password"
             label="Password"
             value={password}
-            onChange={this.HandleChange}
+            onChange={handleChange}
             required
           />
           <FormInput
@@ -87,17 +79,17 @@ class SignUp extends React.Component {
             name="retypePassword"
             label="Retype Password"
             value={retypePassword}
-            onChange={this.HandleChange}
+            onChange={handleChange}
             required
           />
-          <CustomButton type="submit" onclick={this.HandleSubmit}>
+          <CustomButton type="submit" onclick={handleSubmit}>
             SIGN UP
             {/* <button type="submit">Create Account</button> */}
           </CustomButton>
         </form>
       </div>
     );
-  }
+
 }
 
 export default SignUp

@@ -27,9 +27,10 @@ export function* fetchCollectionsAsync() {
 }
 
 export function* fetchCollectionsStart() {
+  console.log("I am fired");
+
   yield takeLatest(
     shopActionTypes.FETCH_COLLECTIONS_START,
     fetchCollectionsAsync
   );
-  yield console.log("I am fired");
 }
