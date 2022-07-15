@@ -6,7 +6,10 @@ import "../signin/signin.styles.scss";
 import { auth, signInWithGoogle } from "../firebase/firebase.utils.js";
 
 const SignIn = () => {
-  const [userCredentials, setCredentials] = useState({ email: "", password: "" });
+  const [userCredentials, setCredentials] = useState({
+    email: "",
+    password: "",
+  });
   const { email, password } = userCredentials;
 
   const handleSubmit = async (event) => {
