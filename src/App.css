@@ -10,3 +10,10 @@ a {
   text-decoration: none;
   color: black;
 }
+
+@media (max-width : 600px) {
+  body {
+    padding: 20px 50px;
+    font-size: 14px;
+  }
+}

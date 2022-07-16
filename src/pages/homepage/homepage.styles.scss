@@ -4,3 +4,12 @@
   align-items: center;
   padding: 20px 80px;
 }
+
+$phone-size : 600px;
+
+@media (max-width: $phone-size) {
+  .homepage {
+    padding: 0;
+    display: block;
+  }
+}

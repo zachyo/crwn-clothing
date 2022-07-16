@@ -65,3 +65,11 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .menu-item {
+    &.large {
+      height: 240px;
+    }
+  }
+}
