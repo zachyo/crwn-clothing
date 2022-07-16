@@ -2,3 +2,9 @@
     // display: flex;
     margin: 0 29rem;
 }
+
+@media (max-width :600px) {
+    .contact {
+        margin: 0;
+    }
+}
