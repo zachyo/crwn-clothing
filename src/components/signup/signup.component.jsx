@@ -48,7 +48,7 @@ const SignUp = () => {
     return (
       <div className="sign-up">
         <h2 className="title">I don't have an account</h2>
-        <span>Sign in with your email and password</span>
+        <span>Sign up as a new user</span>
         <form onSubmit={handleSubmit}>
           <FormInput
             type="text"
