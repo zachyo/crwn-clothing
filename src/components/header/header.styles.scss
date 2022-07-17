@@ -22,5 +22,26 @@
       padding: 10px 15px;
       cursor: pointer;
     }
+    .dropdown {
+      display: none;
+    }
+  }
+}
+
+@media (max-width:600px) {
+  .header{
+    .logo-container {
+    padding: 14px;
+  }
+    .options {
+      .option{
+        &:not(:last-child) {
+          display: none;
+        }
+        &.dropdown {
+          display: flex;
+        }
+      }
+    }
   }
 }

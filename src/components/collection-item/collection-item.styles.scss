@@ -54,12 +54,13 @@
     height: 200px;
     margin-bottom: 90px;
     .custom-button {
-      top: 220px;
+      // top: 220px;
       display: block;
       font-size: 10px;
       padding: 0;
       width: 100%;
       opacity: 1;
+      position: unset;
     }
     .collection-footer {
       .name {
