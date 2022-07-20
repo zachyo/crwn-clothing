@@ -28,20 +28,33 @@
   }
 }
 
-@media (max-width:600px) {
-  .header{
+@media (max-width: 600px) {
+  .header {
     .logo-container {
-    padding: 14px;
-  }
+      padding: 14px;
+    }
     .options {
       // flex-direction: column;
-      .option{
+      .option {
         &:not(:last-child) {
           display: none;
         }
         &.dropdown {
           display: flex;
         }
+      }
+      &.responsive {
+        position: relative;
+      }
+      &.responsive .dropdown {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      &.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
       }
     }
   }

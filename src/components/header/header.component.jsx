@@ -8,6 +8,14 @@ import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
 const Header = ({ currentUser, hidden }) => {
   // const history = useHistory();
+const changeNav = () => {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "options") {
+    x.className += " responsive";
+  } else {
+    x.className = "options";
+  }
+};
 
   return (
     <div className="header">
@@ -31,7 +39,7 @@ const Header = ({ currentUser, hidden }) => {
           </Link>
         )}
         <CartIcon />
-        <Link className="option dropdown" to='#'>=</Link>
+        <Link className="option dropdown" to='#' onClick={changeNav}>=</Link>
       </div>
       {hidden ? null : <CartDropdown />}
     </div>
