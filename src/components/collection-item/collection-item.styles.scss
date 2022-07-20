@@ -52,7 +52,8 @@
   .collection-item {
     width: 46%;
     height: 200px;
-    margin-bottom: 90px;
+    margin-bottom: 100px;
+    display: block;
     .custom-button {
       // top: 220px;
       display: block;
@@ -63,15 +64,16 @@
       position: unset;
     }
     .collection-footer {
+      height: auto;
       .name {
-      font-size: 16px;
-    }
+        font-size: 14px;
+        margin-bottom: .6rem;
+      }
 
-    .price {
-      font-size: 16px;
-      width: 15%;
+      .price {
+        font-size: 14px;
+        width: 15%;
+      }
     }
-    }
-    
   }
 }
