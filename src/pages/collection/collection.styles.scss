@@ -9,16 +9,12 @@
 
   .items {
     display: flex;
-    // justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
-
-    &:last-child {
-      margin-right: 0;
-    }
     & .collection-item {
-      margin-bottom: 40px;
-      width: 22%;
-      margin-right: 39px;
+      margin-bottom: 100px;
+      // width: 22%;
+      // margin-right: 39px;
     }
   }
 }
