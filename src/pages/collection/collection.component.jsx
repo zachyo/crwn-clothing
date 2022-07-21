@@ -6,8 +6,6 @@ import './collection.styles.scss';
 
 
 const CollectionPage = ({collection}) => {
-    console.log(collection)
-
     const {routeName} = useParams();
     const specificCollection = selectCollection(collection, routeName)
 
