@@ -5,14 +5,17 @@ import './collection.styles.scss';
 
 
 const CollectionPage = ({collection}) => {
-    console.log(collection)
+    // console.log(collection)
 
     const {routeName} = useParams();
-    return (  <div className="collection-page"><h2>COLLECTION PAGE : {routeName}</h2></div> );
+    const collectionn = selectCollection(routeName)
+
+    return (  <div className="collection-page"><h2>COLLECTION PAGE : {routeName}</h2>
+    <p>{collectionn.title}</p></div> );
 }
  
-const mapStateToProps = (state, ownProps) => ({
-    collection : selectCollection(ownProps.match.params.collectionId)(state)
-})
+// const mapStateToProps = (state, ownProps) => ({
+//     collection : selectCollection(ownProps.match.params.collectionId)(state)
+// })
 
-export default connect(mapStateToProps) (CollectionPage);
+export default CollectionPage;

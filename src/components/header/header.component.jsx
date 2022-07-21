@@ -22,7 +22,7 @@ const changeNav = () => {
       <Link to="/" className="logo-container">
         <Logo />
       </Link>
-      <div className="options">
+      <div className="options" id='myTopnav'>
         <Link to="/shop" className="option">
           SHOP
         </Link>
