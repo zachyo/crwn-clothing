@@ -8,12 +8,17 @@
   } 
 
   .items {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10px;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    // grid-gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
 
     & .collection-item {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      width: 22%;
     }
   }
 }
