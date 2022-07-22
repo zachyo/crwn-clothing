@@ -32,8 +32,7 @@ class Shop extends React.Component {
     );
   }
   render() {
-    const { match, isCollectionsFetching } = this.props;
-    console.log(match);
+    const {isCollectionsFetching } = this.props;
 
     return (
       <div className="shop-page">
