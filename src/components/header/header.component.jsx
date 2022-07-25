@@ -5,8 +5,13 @@ import { connect } from "react-redux";
 import "../header/header.styles.scss";
 import CartIcon from "../cart-icon/cart-icon";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+import CurrentUserContext from "../context/current-user/current-user.context";
+import { useContext } from "react";
 
-const Header = ({ currentUser, hidden }) => {
+const Header = ({ hidden }) => {
+const currentUser = useContext(CurrentUserContext)
+console.log(currentUser)
+
   // const history = useHistory();
 const changeNav = () => {
   var x = document.getElementById("myTopnav");
@@ -47,7 +52,7 @@ const changeNav = () => {
 };
 
 const mapStateToProps = (store) => ({
-  currentUser: store.user.currentUser,
+  // currentUser: store.user.currentUser,
   hidden: store.cart.hidden,
 });
 
