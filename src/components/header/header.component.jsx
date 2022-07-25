@@ -8,6 +8,7 @@ import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 
 const Header = ({ currentUser, hidden }) => {
   // const history = useHistory();
+  console.log(currentUser)
 const changeNav = () => {
   var x = document.getElementById("myTopnav");
   if (x.className === "options") {
