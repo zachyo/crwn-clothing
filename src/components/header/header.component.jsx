@@ -8,19 +8,19 @@ import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import CurrentUserContext from "../context/current-user/current-user.context";
 import { useContext } from "react";
 
-const Header = ({ hidden }) => {
+
+const Header = ({hidden}) => {
   // const history = useHistory();
   const currentUser = useContext(CurrentUserContext);
   console.log(currentUser);
 
-const changeNav = () => {
   var x = document.getElementById("myTopnav");
   if (x.className === "options") {
     x.className += " responsive";
   } else {
     x.className = "options";
   }
-};
+
 
   return (
     <div className="header">
@@ -44,7 +44,7 @@ const changeNav = () => {
           </Link>
         )}
         <CartIcon />
-        <Link className="option dropdown" to='#' onClick={changeNav}>=</Link>
+        <Link className="option dropdown" to='#'>=</Link>
       </div>
       {hidden ? null : <CartDropdown />}
     </div>
@@ -52,7 +52,7 @@ const changeNav = () => {
 };
 
 const mapStateToProps = (store) => ({
-  currentUser: store.user.currentUser,
+  // currentUser: store.user.currentUser,
   hidden: store.cart.hidden,
 });
 

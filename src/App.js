@@ -18,10 +18,13 @@ import Contact from "./pages/contact/contact.component";
 import CurrentUserContext from "./components/context/current-user/current-user.context";
 
 class App extends React.Component {
-  // constructor() {
-  //   super();
+  constructor() {
+    super();
 
-  // };
+    this.state = {
+      currentUser: null,
+    };
+  }
 
   unsubscribeFromAuth = null;
 
@@ -31,17 +34,21 @@ class App extends React.Component {
       if (user) {
         const userRef = await createUserProfileDoc(user);
         userRef.onSnapshot((snapShot) => {
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data(),
+            },
+          });
           setCurrentUser({
             id: snapShot.id,
             ...snapShot.data(),
           });
-          // console.log(this.state);
+          console.log(this.state);
         });
       }
-      setCurrentUser(user);
-      // addCollectionAndDocuments('collections', collectionsArray.map(({title, items}) => ({title, items})))
-      // history.push('/');
-      // console.log(user);
+      this.setState({ currentUser: user });
+      
     });
   }
 
@@ -68,13 +75,13 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
-  // collectionsArray : selectCollectionsForPreview(state.shop.collections)
-});
+// const mapStateToProps = (state) => ({
+//   currentUser: state.user.currentUser,
+//   // collectionsArray : selectCollectionsForPreview(state.shop.collections)
+// });
 
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
