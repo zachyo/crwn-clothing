@@ -15,6 +15,7 @@ import { setCurrentUser } from "./redux/user/user.actions";
 import CollectionPage from "./pages/collection/collection.component";
 import NotFound from "./components/notFound/notFound";
 import Contact from "./pages/contact/contact.component";
+import CurrentUserContext from "./components/context/current-user/current-user.context";
 
 class App extends React.Component {
   // constructor() {
@@ -50,7 +51,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+        <CurrentUserContext.Provider value={this.state.currentUser}>
+          <Header />
+        </CurrentUserContext.Provider>
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/shop" element={<Shop />} />
