@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import SignIn from "../../components/signin/signin.component";
 import SignUp from "../../components/signup/signup.component";
 import '../signin&signup/signinandsignup.styles.scss'
-import CurrentUserContext from "../../components/context/current-user/current-user.context";
-import { useContext } from "react";
+// import CurrentUserContext from "../../components/context/current-user/current-user.context";
+// import { useContext } from "react";
 
 const SignInandSignUpPage = ({currentUser}) => {
 
