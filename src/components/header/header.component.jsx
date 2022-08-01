@@ -18,7 +18,7 @@ const Header = ({ currentUser, hidden }) => {
 //     x.className = "options";
 //   }
 // };
-const [className, SetClassName] = useState("hamburger block md:hidden");
+const [className, SetClassName] = useState("hamburger");
 const [menu, SetMenu] = useState('hidden')
 const change = (className) => {
   if (className === "hamburger") {
