@@ -25,7 +25,20 @@
 
   .total {
     margin-top: 30px;
-    margin-left: auto;
     font-size: 36px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .checkout-page {
+    width: 100%;
+    .total {
+      font-size: 20px;
+    }
   }
 }
