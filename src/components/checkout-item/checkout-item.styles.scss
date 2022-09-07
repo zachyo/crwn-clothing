@@ -38,3 +38,13 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 600px) {
+  .checkout-item {
+    font-size: 16px;
+    .price {
+      // margin-right: 7px;
+      width: 20%;
+    }
+  }
+}
