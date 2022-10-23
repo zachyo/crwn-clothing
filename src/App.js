@@ -46,9 +46,11 @@ class App extends React.Component {
     this.unsubscribeFromAuth();
   }
   render() {
+    const {currentUser} = this.props
     return (
       <div>
         <Header />
+        <p style={currentUser ? {} : {display : 'none'}}>Welcome Back {currentUser.name}</p>
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/shop" element={<Shop />} />
