@@ -39,6 +39,7 @@ class App extends React.Component {
       }
       setCurrentUser(user);
       
+      
     });
   }
 
@@ -47,10 +48,13 @@ class App extends React.Component {
   }
   render() {
     const {currentUser} = this.props
+    const userName = currentUser?.displayName.split(" ", 2)[1];
     return (
       <div>
         <Header />
-        <p style={currentUser ? {} : {display : 'none'}}>Welcome Back {currentUser.name}</p>
+        <p style={currentUser ? { textAlign: "center", fontSize : '20px', fontWeight : '700'} : { display: "none" }}>
+          Welcome Back {userName}
+        </p>
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/shop" element={<Shop />} />
