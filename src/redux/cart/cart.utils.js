@@ -11,7 +11,7 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
     );
   }
 
-  return[...cartItems, {...cartItemToAdd, quantity : 1}]
+  return [...cartItems, {...cartItemToAdd, quantity : 1}]
 };
 
 export const delItem = (cartItems, cartItemToDel) => {
